@@ -72,6 +72,7 @@ Create a Pull Request
 📧 Contact
 For any inquiries or support, feel free to reach out:
 📩 Email: Parajulidhiraj00@gmail.com
+
 🔗 LinkedIn: https://www.linkedin.com/in/dhiraj-parajuli-2508a3266/
 
 📜 License
