@@ -55,6 +55,7 @@ python manage.py runserver
 Open http://127.0.0.1:8000/ in your browser.
 
 📝 Usage
+
 Sign up as a maid or a house owner.
 House owners can post job listings.
 Maids can apply for jobs matching their skills.
