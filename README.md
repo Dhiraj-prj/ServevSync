@@ -3,10 +3,12 @@ ServeSync
 Maid and House Owner Connection Platform
 
 📌 Overview
+
 ServeSync is a platform designed to connect maids and house owners, making it easier to find and hire trusted domestic workers. 
 The platform allows house owners to post job listings, and maids can browse and apply for jobs that match their skills and availability.
 
 🚀 Features
+
 ✅ User authentication & profile management
 ✅ Maid and house owner dashboard
 ✅ Job posting and job application system
@@ -14,45 +16,11 @@ The platform allows house owners to post job listings, and maids can browse and 
 
 
 🛠️ Tech Stack
+
 Frontend: HTML, CSS, JavaScript
 Backend: Django (Python)
 Database: MySQL
 Authentication: Django Authentication
-
-
-1️⃣ Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/Dhiraj-prj/ServeSync.git
-cd ServeSync
-
-2️⃣ Create a Virtual Environment (Recommended)
-bash
-Copy
-Edit
-python -m venv env
-source env/bin/activate  # For Mac/Linux
-env\Scripts\activate     # For Windows
-
-3️⃣ Install Dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-
-4️⃣ Run Migrations
-bash
-Copy
-Edit
-python manage.py migrate
-
-5️⃣ Start the Server
-bash
-Copy
-Edit
-python manage.py runserver
-Open http://127.0.0.1:8000/ in your browser.
 
 📝 Usage
 
