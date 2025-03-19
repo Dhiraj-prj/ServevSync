@@ -28,6 +28,7 @@ Database: MySQL
 
 Authentication: Django Authentication
 
+
 📝 Usage
 
 Sign up as a maid or a house owner.
@@ -40,19 +41,9 @@ Both users can chat in real-time.
 
 House owners can hire & rate maids after service completion.
 
-🤝 Contributing
 
-We welcome contributions! If you'd like to help improve ServeSync, follow these steps:
 
-Fork the repository
 
-Create a new branch (git checkout -b feature-name)
-
-Commit your changes (git commit -m "Added new feature")
-
-Push to your branch (git push origin feature-name)
-
-Create a Pull Request
 
 📧 Contact
 
