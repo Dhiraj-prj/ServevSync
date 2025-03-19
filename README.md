@@ -1,4 +1,5 @@
 ServeSync
+
 Maid and House Owner Connection Platform
 
 📌 Overview
@@ -61,6 +62,7 @@ Both users can chat in real-time.
 House owners can hire & rate maids after service completion.
 
 🤝 Contributing
+
 We welcome contributions! If you'd like to help improve ServeSync, follow these steps:
 
 Fork the repository
@@ -70,6 +72,7 @@ Push to your branch (git push origin feature-name)
 Create a Pull Request
 
 📧 Contact
+
 For any inquiries or support, feel free to reach out:
 
 📩 Email: Parajulidhiraj00@gmail.com
