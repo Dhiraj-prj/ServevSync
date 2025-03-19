@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Serve Sync{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Home/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/notifications.css' %}">
+    <script src="{% static 'home/js/notifications.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'home/css/footer.css' %}">
+
+
+</head>
+<body>
+    <!-- Include Navbar -->
+    {% include 'Home/navbar.html' %}
+
+    <!-- Content Section -->
+    <div class="content">
+        {% block content %}{% endblock %}
+
+    </div>
+
+    <footer class="footer">
+         {% include 'home/footer.html' %}
+    </footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houseworker Profiles</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        #profile-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .profile-card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #e8f5e9;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .profile-card p {
+            margin: 5px 0;
+            line-height: 1.6;
+            color: #388e3c;
+        }
+
+        .profile-card button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .profile-card button:hover {
+            background-color: #449d44;
+        }
+
+        .close-btn {
+            background-color: #d9534f;
+            margin-top: 5px;
+        }
+
+        .close-btn:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Houseworker Profiles</h1>
+    <div id="profile-container"></div>
+
+    <script>
+        function displayProfiles() {
+            const container = document.getElementById('profile-container');
+            container.innerHTML = '';
+
+            const profilesJson = JSON.parse('{{ profiles_json|escapejs }}');
+
+            profilesJson.forEach(profile => {
+                const fields = profile.fields;
+                const profileDiv = document.createElement('div');
+                profileDiv.classList.add('profile-card');
+                profileDiv.innerHTML = `
+                    <img src="${fields.photo ? fields.photo : 'default.jpg'}" alt="Profile Photo">
+                    <p><strong>${fields.name}</strong></p>
+                    <p>Service: ${fields.service}</p>
+                    <button onclick="showProfileDetails(${profile.pk})">View Details</button>
+                    <div id="profile-details-${profile.pk}"></div>
+                `;
+                container.appendChild(profileDiv);
+            });
+        }
+
+        function showProfileDetails(profileId) {
+            const detailsContainer = document.getElementById(`profile-details-${profileId}`);
+            detailsContainer.innerHTML = 'Loading...';
+
+            fetch(`/houseworker_profile/${profileId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    const photoHtml = data.photo ? `<img src="${data.photo}" alt="Profile Photo">` : 'No photo available';
+                    detailsContainer.innerHTML = `
+                        <div class="profile-card">
+                            <h3>Profile Details</h3>
+                            ${photoHtml}
+                            <p><strong>Name:</strong> ${data.name}</p>
+                            <p><strong>Service:</strong> ${data.service}</p>
+                            <p><strong>Contact:</strong> ${data.contact}</p>
+                            <p><strong>Bio:</strong> ${data.bio}</p>
+                            <p><strong>Rating:</strong> ${data.rating}</p>
+                            <button class="close-btn" onclick="closeProfileDetails(${profileId})">Close</button>
+                        </div>
+                    `;
+                })
+                .catch(error => {
+                    detailsContainer.innerHTML = 'Error loading details.';
+                    console.error('Error:', error);
+                });
+        }
+
+        function closeProfileDetails(profileId) {
+            const detailsContainer = document.getElementById(`profile-details-${profileId}`);
+            detailsContainer.innerHTML = '';
+        }
+
+        window.onload = displayProfiles;
+    </script>
+</body>
+</html>
+{% endblock %}

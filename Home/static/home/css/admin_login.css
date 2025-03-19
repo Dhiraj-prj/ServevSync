@@ -1,0 +1,23 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Target the login logo */
+.login-logo img {
+    width: 150px;               /* Set the width of the logo */
+    height: 150px;              /* Set the height of the logo to match width for a square shape */
+    border-radius: 50%;         /* This makes the logo round */
+    margin: 0 auto;             /* Center the logo */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect to slightly enlarge the logo */
+.login-logo img:hover {
+    transform: scale(1.1);
+}
+
+

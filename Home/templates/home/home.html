@@ -1,0 +1,140 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    position: relative;
+    background: url('Untitled design (8).png') no-repeat center center; /* Replace with your image */
+    background-size: cover;
+}
+
+/* Text Section */
+.text-content {
+    z-index: 2;
+    max-width: 50%;
+    background: rgba(255, 255, 255, 0.8); /* Lighter transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Adds a modern glassy effect */
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2b2b2b;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.register-btn {
+    padding: 14px 28px;
+    background-color: #c60f0f;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.register-btn:hover {
+    background-color: #d80f12;
+    box-shadow: 0 6px 15px rgba(24, 1, 1, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Image Section */
+.hero-image-container {
+    z-index: 2;
+    max-width: 40%;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .text-content {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .hero-image-container {
+        max-width: 90%;
+    }
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serve Sync</title>
+    <!-- Link to the external CSS file -->
+
+</head>
+<body>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Text Section -->
+        <div class="text-content">
+            <h1>Your Trusted Way to Find Reliable Home Helper</h1>
+            <p>
+                <strong>Serve Sync</strong> makes finding reliable maids and home service providers quick and effortless. Join today and discover a network of trusted professionals ready to support your home needs.
+            </p>
+            <a href="{% url 'login' %}"  class="register-btn"><strong>Join Us Today</strong></a>
+        </div>
+
+        <!-- Image Section -->
+        <div class="hero-image-container">
+            <img src="{% static 'home/images/homeimage.png' %}"  alt="Hero Image" class="hero-image">
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

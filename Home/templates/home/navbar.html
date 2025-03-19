@@ -1,0 +1,137 @@
+{% load static %}
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="navbar-logo">
+            <img src="{% static 'home/images/serve_sync_logo.png' %}" alt="Serve Sync Logo">
+        </a>
+
+        <!-- Navbar Links -->
+        <ul class="navbar-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'houseworker_profile_list' %}">Services</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+
+        <!-- Right Side Buttons -->
+        <div class="navbar-buttons">
+            <!-- Search Form -->
+            <form class="navbar-search-form" action="{% url 'search' %}" method="get">
+                <input type="text" name="q" placeholder="Search..." class="search-input">
+                <button type="submit" class="search-button">
+                    <!-- Font Awesome Search Icon -->
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+            <!-- Login & Signup Buttons -->
+            <a href="{% url 'login' %}" class="navbar-btn login-btn">Login</a>
+            <a href="{% url 'signup' %}" class="navbar-btn signup-btn">Sign Up</a>
+
+            <!-- Profile Button (Font Awesome Profile Icon) -->
+            <a href="/unique-create-profile/" class="create-profile-btn">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- Notifications Script -->
+<script src="{% static 'home/js/notifications.js' %}"></script>
+
+<!-- Updated CSS -->
+<style>
+    /* Navbar Layout */
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Navbar Links */
+    .navbar-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    /* Right Side Buttons Container */
+    .navbar-buttons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: center;
+        flex-grow: 1;
+    }
+
+    /* Search Form */
+    .navbar-search-form {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    .search-input {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    .search-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+    .search-button .fas {
+        font-size: 18px;
+        color: #0077B6;
+    }
+
+    /* Login & Signup Buttons */
+    .navbar-btn {
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 14px;
+        border: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .login-btn, .signup-btn {
+        background: linear-gradient(45deg, #0077B6, #00A896);
+        color: white;
+    }
+
+    .login-btn:hover, .signup-btn:hover {
+        background: linear-gradient(45deg, #005F86, #00897B);
+        transform: scale(1.05);
+    }
+
+    /* Profile Button (Font Awesome Icon) */
+    .create-profile-btn {
+        width: 40px;
+        height: 40px;
+        background: #0077B6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .create-profile-btn .fas {
+        color: white;
+        font-size: 20px;
+    }
+
+    .create-profile-btn:hover {
+        background: #005F86;
+        transform: scale(1.1);
+    }
+</style>

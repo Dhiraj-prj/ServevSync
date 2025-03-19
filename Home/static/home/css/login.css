@@ -1,0 +1,279 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E9ECEB; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F8F5;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #E9ECEB;
+}
+
+.navbar .logo img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #005B5A;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    color: #82C8C6;
+}
+
+/* Content Section */
+.content {
+    padding: 2rem;
+}
+
+/* Home Section */
+.home-section {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.home-section h1 {
+    font-size: 2.5rem;
+    color: #005B5A;
+}
+
+.home-section p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem 0;
+    color: #666;
+}
+
+.cta-button {
+    background-color: #005B5A;
+    color: #FFF;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #82C8C6;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #E9ECEB;
+    color: #555;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        margin: 0.5rem 0;
+    }
+
+    .content, .home-section {
+        padding: 3rem 1rem;
+    }
+
+    .home-section h1 {
+        font-size: 2rem;
+    }
+
+    .home-section p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar .logo img {
+        height: 40px;
+    }
+
+    .navbar ul {
+        display: none; /* Hide menu by default for small screens */
+    }
+
+    .navbar .hamburger {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .navbar ul.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-section h1 {
+        font-size: 1.8rem;
+        margin: 0.5rem 0;
+    }
+
+    .home-section p {
+        font-size: 0.9rem;
+        margin: 0.5rem 0 1.5rem 0;
+    }
+
+    .cta-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .footer {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+}
+
+
+/* Login Container */
+.login-container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo img {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+/* Login Card Title */
+.login-card h2 {
+    color: #005B5A; /* Primary color */
+    margin-bottom: 0.5rem;
+}
+
+.login-card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Role Selection Buttons */
+.role-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.role-selection button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#worker-btn {
+    background-color: #005B5A;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#hirer-btn {
+    background-color: #82C8C6;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#worker-btn:hover {
+    background-color: #82C8C6;
+}
+
+#hirer-btn:hover {
+    background-color: #005B5A;
+}
+
+/* Login Forms */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.login-form h3 {
+    color: #005B5A;
+}
+
+.login-form input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+}
+
+.login-form button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #005B5A;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #82C8C6;
+}

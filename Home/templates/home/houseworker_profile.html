@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houseworker Profile | Serve Sync</title>
+    <link rel="stylesheet" href="{% static 'Home/css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, {{ profile.name }}</h2>
+        <p><strong>Service:</strong> {{ profile.service }}</p>
+        <p><strong>Contact:</strong> {{ profile.contact }}</p>
+        <p><strong>Bio:</strong> {{ profile.bio }}</p>
+        <p><strong>Rating:</strong> {{ profile.rating }}</p>
+
+        <h3>Available Jobs</h3>
+        <ul>
+            {% for job in jobs %}
+                <li>
+                    <strong>{{ job.title }}</strong> - {{ job.description }}
+                    <br>
+                    <small>Posted by: {{ job.posted_by.username }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ service_name }} Professionals</h1>
+    <div class="row">
+        {% for worker in houseworkers %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                {% if worker.photo %}
+                    <img src="{{ worker.photo.url }}" alt="{{ worker.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                {% else %}
+                    <img src="{% static 'images/default_profile.png' %}" alt="Default Profile" class="card-img-top" style="height: 200px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ worker.name }}</h5>
+                    <p class="card-text">{{ worker.bio|truncatewords:20 }}</p> {# Truncate bio for brevity #}
+                    <p class="card-text">Contact: {{ worker.contact }}</p>
+                    <p class="card-text">Rating: {{ worker.rating }}</p>
+                    {# Add a button to view the full profile if needed #}
+                    <a href="{% url 'worker_profile' worker.pk %}" class="btn btn-primary mt-auto">View Profile</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <div class="col-12">
+                <p>No professionals found for {{ service_name }} yet.</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "home/base.html" %}
+{% block content %}
+<h2>Notifications</h2>
+<ul id="all-notifications">
+    {% for notification in notifications %}
+    <li class="{{ 'read' if notification.read else 'unread' }}">
+        <a href="{{ notification.link }}">{{ notification.message }}</a>
+        <small>{{ notification.created_at }}</small>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

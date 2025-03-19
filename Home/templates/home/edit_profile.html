@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        /* Add the same styles as the create profile form for consistency */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #555;
+        }
+        input, textarea, select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2978b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Profile</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" value="{{ existing_data.name }}" required>
+
+            <label for="service">Service:</label>
+            <select id="service" name="service" required>
+                <option value="{{ existing_data.service }}">{{ existing_data.service }}</option>
+                <option value="Cleaning Services">Cleaning Services</option>
+                <option value="Cooking Assistance">Cooking Assistance</option>
+                <option value="Babysitting">Babysitting</option>
+                <option value="Gardening Services">Gardening Services</option>
+                <option value="Elder Care">Elder Care</option>
+                <option value="Home Maintenance">Home Maintenance</option>
+                <option value="Laundry Services">Laundry Services</option>
+                <option value="Custom Home Services">Custom Home Services</option>
+            </select>
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" value="{{ existing_data.contact }}" required>
+
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" rows="4">{{ existing_data.bio }}</textarea>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

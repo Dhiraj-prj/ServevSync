@@ -1,0 +1,120 @@
+/* General styles for sections */
+section {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Button styles */
+button, .button {
+    background-color: #3D7D69; /* Adjust based on your design colors */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+button:hover, .button:hover {
+    background-color: #2B5D4D;
+}
+
+/* Service Page */
+.service h1 {
+    font-size: 2rem;
+}
+
+.service-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    background-color: #F0F8F5;
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+}
+
+/* About Page */
+.about-info {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Contact Page */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust padding for smaller screens */
+    section {
+        padding: 1rem;
+    }
+
+    /* Service Page */
+    .service h1 {
+        font-size: 1.5rem;
+    }
+
+    .service-item {
+        width: 100%; /* Stack items on smaller screens */
+        max-width: 300px;
+    }
+
+
+    /* Contact Page */
+    .contact-form {
+        padding: 1rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for mobile screens */
+    button, .button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .service h1 {
+        font-size: 1.25rem;
+    }
+
+    .about-info {
+        font-size: 1rem;
+    }
+
+    /* Adjust form input sizes on mobile */
+    .contact-form input, .contact-form textarea {
+        font-size: 0.9rem;
+    }
+}

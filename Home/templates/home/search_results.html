@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+
+        /* Main Content Area */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Search Results Styling */
+        .results-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .results-list li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .results-list li:hover {
+            background-color: #e1f5e1;
+            transform: translateY(-2px);
+        }
+
+        .no-results {
+            text-align: center;
+            font-size: 18px;
+            color: #f44336;
+            font-weight: bold;
+        }
+
+        /* Backlink Styling */
+        .backlink {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        .backlink a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 2px solid #4CAF50;
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .backlink a:hover {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p, .results-list li {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        <p>You searched for: {{ query }}</p>
+
+        {% if results %}
+            <ul class="results-list">
+                {% for result in results %}
+                    <li>{{ result }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-results">No results found.</p>
+        {% endif %}
+
+        <!-- Attractive Backlink -->
+        <div class="backlink">
+            <a href="/">Go Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

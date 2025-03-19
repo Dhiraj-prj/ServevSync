@@ -1,0 +1,206 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #ffffeb; /* Light green background */
+    padding: 50px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h2 {
+    font-size: 28px;
+    color: #2b3e4e; /* Dark blue */
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: #555;
+    font-size: 16px;
+}
+
+.divider {
+    width: 50px;
+    height: 3px;
+    background-color: #2b3e4e; /* Dark blue */
+    margin: 10px auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: stretch; /* Makes all columns the same height */
+}
+
+/* Form Section */
+.contact-form {
+    background: #ffffff; /* White */
+    border-radius: 20px; /* Rounded corners */
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 400px; /* Matches the height of the details */
+}
+
+.contact-form form {
+    width: 150%;
+    max-width: 440px; /* Reduced width for the form box */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    width: 100%;
+    background-color: #c00c0c; /* Dark blue */
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #a70a0a; /* Slightly darker blue */
+}
+
+/* Info Section */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spaces boxes evenly */
+    height: 100%; /* Ensures this column matches the form height */
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff; /* White */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100px; /* Uniform height for all boxes */
+}
+
+.info-icon {
+    background-color: #c00c0c; /* Dark blue */
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.info-content h4 {
+    margin: 0;
+    font-size: 25px;
+    color: #2b3e4e; /* Dark blue */
+}
+
+.info-content p {
+    margin: 5px 0 0 0;
+    color: #555;
+    font-size: 18px;
+}</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Section</title>
+    <link rel="stylesheet" href="contactus.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Header -->
+            <div class="contact-header">
+                <h1>Let's Get In Touch</h1>
+                <p>Have a question or just want to say hi? We'd love to hear from you.</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Form Section -->
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Enter Your Name" required>
+                        <input type="email" name="email" placeholder="Enter Your Email" required>
+                        <textarea name="message" placeholder="Send Your Message" rows="6" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+
+                <!-- Info Section -->
+                <div class="contact-details">
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+977 9815373314</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>support@servesync.com</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p>Itahari-6,Sunsari,Nepal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock %}
+
+

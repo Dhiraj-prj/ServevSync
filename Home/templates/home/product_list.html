@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+</head>
+<body>
+    <h1>Product List</h1>
+    <button onclick="fetchProducts()">Show Products</button>
+    <div id="product-container" style="margin-top: 20px;"></div>
+
+    <script>
+        function fetchProducts() {
+            const container = document.getElementById('product-container');
+            container.innerHTML = ''; // Clear previous content
+
+            const productsJson = JSON.parse('{{ products_json|escapejs }}');
+
+            if (productsJson.length > 0) {
+                productsJson.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    const fields = product.fields;
+                    productDiv.innerText = `${fields.name} - $${fields.price}`;
+                    container.appendChild(productDiv);
+                });
+            } else {
+                container.innerText = 'No products available.';
+            }
+        }
+    </script>
+</body>
+</html>

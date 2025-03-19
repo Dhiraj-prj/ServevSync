@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Serve Sync</title>
+    <link rel="stylesheet" href="{% static 'Home/css/login.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+            margin: 0 auto 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .role-selection button {
+            width: 45%;
+            padding: 10px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .role-selection button:hover {
+            background-color: #0056b3;
+        }
+
+        .login-form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .login-form h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .login-form button:hover {
+            background-color: #218838;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="{% static 'Home/images/serve_sync_logo.png' %}" alt="Serve Sync Logo">
+        </div>
+
+        <!-- Welcome Message -->
+        <h2>Welcome to Serve Sync</h2>
+        <p>Please select your role to proceed:</p>
+
+        <!-- Role Selection Buttons -->
+        <div class="role-selection">
+            <button id="worker-btn" onclick="showWorkerLogin()">Houseworker</button>
+            <button id="hirer-btn" onclick="showHirerLogin()">Hire Someone</button>
+        </div>
+
+        <!-- Login Forms -->
+        <div id="worker-login" class="login-form">
+            <h3>Houseworker Login</h3>
+            <form method="post" action="{% url 'worker_login' %}">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login as Houseworker</button>
+            </form>
+        </div>
+
+        <div id="hirer-login" class="login-form">
+            <h3>Hirer Login</h3>
+            <form method="post" action="{% url 'hirer_login' %}">
+                {% csrf_token %}
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login as Hirer</button>
+            </form>
+        </div>
+
+        <!-- Back Link -->
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+
+    <!-- JavaScript to Toggle Forms -->
+    <script>
+        function showWorkerLogin() {
+            document.getElementById("worker-login").style.display = "block";
+            document.getElementById("hirer-login").style.display = "none";
+        }
+
+        function showHirerLogin() {
+            document.getElementById("worker-login").style.display = "none";
+            document.getElementById("hirer-login").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Houseworker Profiles</title>
+</head>
+<body>
+    <h1>Houseworker Profiles</h1>
+    <div id="profile-container"></div>
+
+    <script>
+        function displayProfiles() {
+            const container = document.getElementById('profile-container');
+            container.innerHTML = '';
+
+            const profilesJson = JSON.parse('{{ profiles_json|escapejs }}');
+
+            profilesJson.forEach(profile => {
+                const fields = profile.fields;
+                const profileDiv = document.createElement('div');
+                profileDiv.innerHTML = `
+                    Name: ${fields.name} - Service: ${fields.service}
+                    <button onclick="showProfileDetails(${profile.pk})">View Details</button>
+                    <div id="profile-details-${profile.pk}"></div>
+                `;
+                container.appendChild(profileDiv);
+            });
+        }
+
+        function showProfileDetails(profileId) {
+            const detailsContainer = document.getElementById(`profile-details-${profileId}`);
+            detailsContainer.innerHTML = 'Loading...';
+
+            fetch(`/houseworker_profile/${profileId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    const photoHtml = data.photo ? `<img src="${data.photo}" alt="Profile Photo" width="100">` : 'No photo available';
+                    detailsContainer.innerHTML = `
+                        <h3>Profile Details:</h3>
+                        ${photoHtml}
+                        <p>Name: ${data.name}</p>
+                        <p>Service: ${data.service}</p>
+                        <p>Contact: ${data.contact}</p>
+                        <p>Bio: ${data.bio}</p>
+                        <p>Rating: ${data.rating}</p>
+                    `;
+                })
+                .catch(error => {
+                    detailsContainer.innerHTML = 'Error loading details.';
+                    console.error('Error:', error);
+                });
+        }
+
+        window.onload = displayProfiles;
+    </script>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,167 @@
+/* Basic Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #f5f8f7; /* Adjust based on your design */
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-links, .navbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-logo img {
+    width: 50px;
+}
+
+/* Search Bar Styling */
+.navbar-search-form {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-input {
+    border: none;
+    padding: 8px 10px;
+    width: 180px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #005f73; /* Adjust color to match the navbar design */
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+    filter: invert(100%);
+}
+
+/* Right Buttons Styling */
+.navbar-btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #005f73;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-btn:hover {
+    background-color: #0a9396;
+}
+
+/* Navbar link styling */
+.navbar-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    color: #005f73;
+}
+
+
+/* Profile Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .navbar-buttons {
+        margin-top: 10px;
+    }
+
+    .dropdown-content {
+        right: auto;
+        left: 0;
+        width: 100%;
+    }
+}

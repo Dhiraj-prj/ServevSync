@@ -1,0 +1,36 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Your styles can be kept here */
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ service_name }} Houseworkers</title>
+</head>
+<body>
+    <div class="services-section">
+        <h2>{{ service_name }} Houseworkers</h2>
+        <div class="divider"></div>
+
+        {% if houseworkers %}
+            <div class="services-grid">
+                {% for worker in houseworkers %}
+                    <div class="service-card">
+                        <img src="{{ worker.profile_picture.url }}" alt="{{ worker.name }}">
+                        <p>{{ worker.name }}</p>
+                        <p>{{ worker.bio }}</p>
+                        <p>Contact: {{ worker.contact }}</p>
+                        <a href="mailto:{{ worker.email }}">Contact via Email</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No houseworkers available for this service.</p>
+        {% endif %}
+    </div>
+</body>
+{% endblock %}

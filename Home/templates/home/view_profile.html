@@ -1,0 +1,24 @@
+!<html>
+<head>
+    <title>view_profile</title>
+</head>
+<body>
+<div id="uniqueProfileData"></div>
+</body>
+</html>
+<script>
+    function fetchUniqueProfileData() {
+        fetch('/unique-fetch-profile-data/')  // Django URL that returns profile data
+        .then(response => response.json())  // Convert response to JSON
+        .then(data => {
+            // Display fetched data in the div
+            document.getElementById('uniqueProfileData').innerHTML = `
+                <p><strong>Name:</strong> ${data.name}</p>
+                <p><strong>Service:</strong> ${data.service}</p>
+                <p><strong>Contact:</strong> ${data.contact}</p>
+                <p><strong>Bio:</strong> ${data.bio}</p>
+            `;
+        })
+        .catch(error => console.error('Error fetching profile data:', error));
+    }
+</script>

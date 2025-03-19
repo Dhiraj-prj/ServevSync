@@ -1,0 +1,95 @@
+/* Custom CSS for Jazzmin Admin Login Page */
+
+/* Background */
+body {
+    background-color: #f0f4f8; /* Light gray background */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Login Container */
+.card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 2rem;
+    max-width: 400px;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+/* Header */
+.card-header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #0066cc; /* Blue focus color */
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25); /* Blue focus shadow */
+}
+
+/* Button */
+.btn-primary {
+    background-color: #0066cc;
+    border-color: #0066cc;
+    color: #ffffff;
+    padding: 0.75rem 1.25rem;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+    border-color: #005bb5;
+}
+
+/* Link */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.card-footer {
+    text-align: center;
+    font-size: 14px;
+    color: #888888;
+}
+
+/* Custom Logo */
+.card-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-logo img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+/* Error Messages */
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
