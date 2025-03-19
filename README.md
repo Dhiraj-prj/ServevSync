@@ -10,24 +10,34 @@ The platform allows house owners to post job listings, and maids can browse and 
 🚀 Features
 
 ✅ User authentication & profile management
+
 ✅ Maid and house owner dashboard
+
 ✅ Job posting and job application system
+
 ✅ Real-time chat for communication
 
 
 🛠️ Tech Stack
 
 Frontend: HTML, CSS, JavaScript
+
 Backend: Django (Python)
+
 Database: MySQL
+
 Authentication: Django Authentication
 
 📝 Usage
 
 Sign up as a maid or a house owner.
+
 House owners can post job listings.
+
 Maids can apply for jobs matching their skills.
+
 Both users can chat in real-time.
+
 House owners can hire & rate maids after service completion.
 
 🤝 Contributing
@@ -35,9 +45,13 @@ House owners can hire & rate maids after service completion.
 We welcome contributions! If you'd like to help improve ServeSync, follow these steps:
 
 Fork the repository
+
 Create a new branch (git checkout -b feature-name)
+
 Commit your changes (git commit -m "Added new feature")
+
 Push to your branch (git push origin feature-name)
+
 Create a Pull Request
 
 📧 Contact
